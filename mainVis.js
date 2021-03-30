@@ -242,7 +242,7 @@ function drawVis(svgClass, data) {
     [
       "Watch the animation to learn", 
       "how UK exports have changed",
-      "thoughtout the different years."
+      "throughout the different years."
     ]);
   
 }
