@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>MM13: UK Exports</title>
+    <meta charset="utf-8" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="helper.js"></script>
+    <script type="text/javascript" src="mainVis.js"></script>
+    <script src="//unpkg.com/d3-radial-axis"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🗺️</text></svg>">
+</head>
+
+<body style="text-align: center; background-color: #fbfbfb; margin-top: 50;">
+  <svg height="800" width="1100" class="mainVis"></svg>
+  <footer>
+    <p style="font-family: 'Rubik'; font-size: 15px;">Sources: 
+      <a target="_blank" href="https://www.instituteforgovernment.org.uk/sites/default/files/timeline-lockdown-web.pdf">Timeline of UK Coronavirus Events</a> & 
+      <a target="_blank" href="https://data.world/makeovermonday/2021w13">UK Exports Data</a>
+     </p>
+    <p style="font-family: 'Rubik'; font-size: 15px;">Built by <a target="_blank" href="https://twitter.com/NINGN418">Lesley</a> 🧙‍♂️</p>
+  </footer>
+<script>
+  let textColor = "#484848";
+  let padding = 25;
+
+  const getDataAndDrawVis = async() => {
+    let data = await d3.csv("exports.csv");
+
+    // console.log(data);
+    // console.log(getFrequencyByKey(data, "Category"));
+    // console.log(getYearTotal(data, "Imports"));
+    // console.log(generateAllRank(getYearTotal(data, "Imports")))
+    
+    // let finalList = [];
+    // for (var i = 2000; i < 2022; i++) {
+    //   finalList.push(getListByYear(data, "Machinery & transport equipment", "Exports", i));
+    // }
+
+    drawVis(".mainVis", getTotalByYear(data, "Exports"));
+  }
+
+  getDataAndDrawVis();
+
+</script>
+</body>
+</html>
