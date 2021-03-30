@@ -227,14 +227,14 @@ function drawVis(svgClass, data) {
     [
       "In 2020, the UK was affected by multiple", 
       "events related to Brexit and Covid-19",
-      "that contributed to UK's decline in exports."
+      "that contributed to its decline in exports."
     ]);
 
   addBodyText(svg, 5, 300, textColor, 
       [
         "By January 2021, UK exports of goods", 
         "to the EU have plunged by over ",
-        "40% in January 2021, the largest decline",
+        "40%, the largest monthly decline ",
         "in British trade in over 20 years."
       ]);
 
@@ -242,7 +242,7 @@ function drawVis(svgClass, data) {
     [
       "Watch the animation to learn", 
       "how UK exports have changed",
-      "throughout the different years."
+      "throughout the years."
     ]);
   
 }
