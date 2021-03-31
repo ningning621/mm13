@@ -1,5 +1,5 @@
 function drawVis(svgClass, data) {
-  console.log(data)
+  // console.log(data)
   let svg = d3.select(svgClass);
 
   let coralColor = "#fb6466";
@@ -121,6 +121,7 @@ function drawVis(svgClass, data) {
     .style("opacity", 0.1);
 
   //draw concentric circles for yaxis
+  var counterRing = 0;
   for (var i = innerRadius; i < outerRadius; i+=50) {
     mainG.append("circle")
       .attr("cx", 0)
@@ -133,12 +134,13 @@ function drawVis(svgClass, data) {
     mainG.append("text")
       .attr("x", -1*i)
       .attr("y", 0)
-      .text(i)
+      .text(((extent[1]/5)*(counterRing)).toFixed(0))
       .attr("transform", "translate(-2.5, -2.5)")
       .style("font-family", "Rubik")
       .style("font-size", 10)
       .style("opacity", 0.5)
       .style("text-anchor", "end");
+    counterRing = counterRing + 1;
   }
   // add label for y axis 
   mainG.append("text")
